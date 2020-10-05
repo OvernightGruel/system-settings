@@ -9,6 +9,7 @@
 - timedatectl set-local-rtc 1
 
 ## v2ray
+```json
 {
     "policy":null,
     "log":{
@@ -122,3 +123,4 @@
         ]
     }
 }
+```
