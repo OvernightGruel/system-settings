@@ -18,7 +18,9 @@
 ### sound
   - yay -S alsa-utils
   - [alsamixer](https://xlui.me/t/archlinux-xfce4-alsa/)
-  
+
+### font
+- pacman -S ttf-meslo-nerd-font-powerlevel10k nerd-fonts-terminus
 
 ## v2ray
 - yay -S v2ray --> vim /etc/v2ray/config.json --> sudo systemctl start v2ray.service --> sudo systemctl enable v2ray.service
@@ -28,9 +30,7 @@
 ## dwm
 - yay -S picom feh
 - /bin/startdwm
+- ~/.Xresources
 - ~/.xinitrc  --> run "startx" start dwm
 - ~/.zprofile --> autostartdwm
 - /etc/systemd/system/getty@tty1.service.d/override.conf  --> autologin 
-
-## powerlevel10k font
-- pacman -S ttf-meslo-nerd-font-powerlevel10k 
