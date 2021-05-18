@@ -2,8 +2,17 @@
 ### network
 - systemctl enable dhcpcd
 
+### time
+  - timedatectl set-local-rtc 1
+
 ### user
 - useradd -m -G wheel clay --> passwd clay --> ln -s /usr/bin/vim /usr/bin/vi --> visudo
+
+### grub windows
+- pacman -S os-prober ntfs-3g
+- mount /dev/sda1 /boot/EFI/Windows
+- os-prober
+- grub-mkconfig -o /boot/grub/grub.cfg
 
 ### nvidia
 - pacman -S nvidia nvidia-utils 
@@ -11,9 +20,6 @@
 
 ### package
 - pacman -S wget man base-devel xorg xorg-apps 
-
-### time
-  - timedatectl set-local-rtc 1
 
 ### sound
   - yay -S alsa-utils
