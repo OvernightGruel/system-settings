@@ -66,6 +66,7 @@ passwd
 
 # Grub
 pacman -S grub efibootmgr
+mkdir -p /boot/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux
 
@@ -90,6 +91,9 @@ mount /dev/sda1 /boot/EFI/Windows
 os-prober
 grub-mkconfig -o /boot/grub/grub.cfg
 
+# essential packages
+pacman -S wget man git base-devel openssh
+
 # nvidia
 pacman -S nvidia nvidia-utils 
 nvidia-xconfig
@@ -98,16 +102,12 @@ nvidia-xconfig
 - pacman -S xorg xorg-apps
 
 # user
-pacman -S sudo
 useradd -m -G wheel zwq
 passwd zwq
 ln -s /usr/bin/vim /usr/bin/vi
 visudo
 
 # ---------------------------------------------------
-
-# essential packages
-pacman -S wget man base-devel openssh
 
 # dwm
 git clone https://github.com/OvernightGruel/dwm.git
