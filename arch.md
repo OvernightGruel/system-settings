@@ -37,7 +37,7 @@ swapon /mnt/swapfile
 vim /etc/pacman.d/mirrorlist
 
 # Install essential packages
-pacstrap /mnt base linux linux-firmware vim dhcpcd amd-ucode
+pacstrap /mnt base linux linux-firmware vim dhcpcd amd-ucode reflector
 
 # Configure the system
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -70,6 +70,9 @@ mkdir -p /boot/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux
 
+# dhcpcd
+systemctl enable dhcpcd
+
 exit
 
 reboot
@@ -78,8 +81,8 @@ reboot
 ## Post-installation
 
 ```bash
-# dhcpcd
-systemctl enable dhcpcd
+# reflector 
+reflector --verbose -c China -l 30 --sort rate --save /etc/pacman.d/mirrorlist
 
 # timedate
 timedatectl set-local-rtc 1
@@ -98,9 +101,6 @@ pacman -S wget man git base-devel openssh
 pacman -S nvidia nvidia-utils 
 nvidia-xconfig
 
-# xorg
-- pacman -S xorg xorg-apps
-
 # user
 useradd -m -G wheel zwq
 passwd zwq
@@ -108,6 +108,9 @@ ln -s /usr/bin/vim /usr/bin/vi
 visudo
 
 # ---------------------------------------------------
+
+# xorg
+- pacman -S xorg xorg-apps
 
 # dwm
 git clone https://github.com/OvernightGruel/dwm.git
