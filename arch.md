@@ -112,7 +112,7 @@ visudo
 # ---------------------------------------------------
 
 # xorg
-- pacman -S xorg xorg-apps
+- pacman -S xorg
 
 # dwm
 git clone https://github.com/OvernightGruel/dwm.git
