@@ -163,7 +163,7 @@ vim .zshrc "export http\_proxy=http://127.0.0.1:10809 export https\_proxy=http:/
 # paru
 
 # chrome
-google-chrome-stable --proxy-server="http://127.0.0.1:10809;https://127.0.0.1:10809"
+google-chrome-stable --proxy-server="socks5://127.0.0.1:10808"
 
 # ---------------------------------------------------------
 
