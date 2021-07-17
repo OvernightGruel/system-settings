@@ -91,6 +91,8 @@ timedatectl set-local-rtc 1
 pacman -S os-prober ntfs-3g
 mkdir -p /boot/EFI/Windows
 mount /dev/sda1 /boot/EFI/Windows
+vim /etc/default/grub
+# GRUB_DISABLE_OS_PROBER=false
 os-prober
 grub-mkconfig -o /boot/grub/grub.cfg
 
