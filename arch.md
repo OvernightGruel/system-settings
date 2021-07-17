@@ -136,12 +136,23 @@ vim /etc/systemd/system/getty@tty1.service.d/override.conf
 # ------------------------------------------------------
 
 # v2ray
+wget https://github.com/v2fly/v2ray-core/releases/download/v4.41.0/v2ray-linux-64.zip
+sudo mkdir /usr/local/v2ray
+sudo unzip v2ray-linux-64.zip -d /usr/local/v2ray/ && sudo rm -f v2ray-linux-64.zip
+sudo cp /usr/local/v2ray/config.json /usr/local/v2ray/config_bak.json
+sudo vim /usr/local/v2ray/config.json
+
+sudo vim /usr/local/v2ray/systemd/system/v2ray.service  # ExecStart=/usr/local/v2ray/v2ray -config /usr/local/v2ray/config.json
+sudo cp /usr/local/v2ray/systemd/system/v2ray.service /lib/systemd/system
+sudo systemctl start v2ray.service
 sudo systemctl enable v2ray.service
+
 vim .zshrc "export http\_proxy=http://127.0.0.1:10809 export https\_proxy=http://127.0.0.1:10809"
 
 # paru
 
 # chrome
+google-chrome-stable --proxy-server="http://127.0.0.1:10809;https://127.0.0.1:10809"
 
 # ---------------------------------------------------------
 
