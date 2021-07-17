@@ -165,6 +165,23 @@ vim .zshrc "export http\_proxy=http://127.0.0.1:10809 export https\_proxy=http:/
 # chrome
 google-chrome-stable --proxy-server="socks5://127.0.0.1:10808"
 
+# dracula theme
+## grub
+https://draculatheme.com/grub
+
+## xresources
+https://draculatheme.com/xresources
+
+## alacritty
+https://draculatheme.com/alacritty
+
+## no do
+https://draculatheme.com/zsh-syntax-highlighting
+https://draculatheme.com/zsh
+https://draculatheme.com/vim
+https://draculatheme.com/rofi
+https://draculatheme.com/dunst
+
 # ---------------------------------------------------------
 
 # dwm
