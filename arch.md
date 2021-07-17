@@ -81,11 +81,11 @@ reboot
 ## Post-installation
 
 ```bash
-# reflector 
-reflector --verbose -c China -l 30 --sort rate --save /etc/pacman.d/mirrorlist
-
 # timedate
 timedatectl set-local-rtc 1
+
+# reflector 
+reflector --verbose -c China -l 30 --sort rate --save /etc/pacman.d/mirrorlist
 
 # grub windows
 pacman -S os-prober ntfs-3g
@@ -97,7 +97,7 @@ os-prober
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # essential packages
-pacman -S wget man git base-devel openssh
+pacman -S wget man git base-devel openssh unzip
 
 # nvidia
 pacman -S nvidia nvidia-utils 
@@ -114,15 +114,16 @@ visudo
 # xorg
 - pacman -S xorg
 
-# dwm
-git clone https://github.com/OvernightGruel/dwm.git
-make clean install
-vim startdwm && cp startdwm /usr/bin
+# qtile
+pacman -S qtile
+cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
+
+# alacritty
 
 # startx with xinit
 pacman -S xorg-xinit
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
-vim ~/.xinitrc # exec startdwm
+vim ~/.xinitrc # exec qtile start
 vim ~/.Xresources # set dpi
 startx
 
@@ -135,9 +136,14 @@ vim /etc/systemd/system/getty@tty1.service.d/override.conf
 # ------------------------------------------------------
 
 # v2ray
-yay -S v2ray --> vim /etc/v2ray/config.json --> sudo systemctl start v2ray.service --> sudo systemctl enable v2ray.service
-vim /usr/share/applications/google-chrome.desktop "--proxy-server="socks5://127.0.0.1:10808""
-yay -S privoxy --> vim /etc/privoxy/config "forward-socks5t / 127.0.0.1:10808 ." --> vim .zshrc "export http\_proxy=http://127.0.0.1:8118 export https\_proxy=http://127.0.0.1:8118" --> sudo systemctl start privoxy --> sudo systemctl enable privoxy
+sudo systemctl enable v2ray.service
+vim .zshrc "export http\_proxy=http://127.0.0.1:10809 export https\_proxy=http://127.0.0.1:10809"
+
+# paru
+
+# chrome
+
+# ---------------------------------------------------------
 
 # dwm
 yay -S picom feh
