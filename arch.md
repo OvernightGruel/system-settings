@@ -205,3 +205,25 @@ yay -S alsa-utils
 # font
 pacman -S ttf-meslo-nerd-font-powerlevel10k nerd-fonts-terminus
 ```
+
+-----
+
+picom-jonaburg-git
+
+alacritty
+zsh/ohmyzsh
+
+vim
+
+sxiv 
+
+dmenu
+rofi
+
+dunst
+
+i3lock-color&xautolock
+
+conky
+
+Fcitx5 Themes
