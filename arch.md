@@ -141,6 +141,9 @@ EnableHiDPI=true
 [X11]
 EnableHiDPI=true
 
+# grub
+https://draculatheme.com/grub
+
 # ----------------------------------------------------
 
 
