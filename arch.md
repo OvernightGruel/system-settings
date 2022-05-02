@@ -125,6 +125,24 @@ sudo systemctl enable v2ray.service
 
 vim .zshrc "export all\_proxy=socks5://127.0.0.1:10808"
 
+# --------------------------------------------------
+
+install dtos
+
+vim ~/.Xresources # Xft.dpi: 192
+
+vim /etc/sddm.conf
+[X11]
+ServerArguments=-nolisten tcp -dpi 94
+
+[Wayland]
+EnableHiDPI=true
+
+[X11]
+EnableHiDPI=true
+
+# ----------------------------------------------------
+
 
 # xorg
 - pacman -S xorg
