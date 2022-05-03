@@ -147,6 +147,10 @@ EnableHiDPI=true
 2. modify xmobar config file
 3. add sound button
 
+# wallpaper
+1. modify xmonad.hs startuphook # xwallpaper --stretch ~/.cache/wall
+2. cp path/to/wallpaple ~/.cache/wall
+
 # grub
 https://draculatheme.com/grub
 
