@@ -133,14 +133,13 @@ install dtos
 
 vim ~/.Xresources # Xft.dpi: 192
 
+# sddm login manager
 vim /etc/sddm.conf
 [X11]
 ServerArguments=-nolisten tcp -dpi 94
-
-[Wayland]
 EnableHiDPI=true
 
-[X11]
+[Wayland]
 EnableHiDPI=true
 
 # grub
