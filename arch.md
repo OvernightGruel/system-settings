@@ -123,7 +123,9 @@ sudo cp /usr/local/v2ray/systemd/system/v2ray.service /lib/systemd/system
 sudo systemctl start v2ray.service
 sudo systemctl enable v2ray.service
 
-vim .zshrc "export all\_proxy=socks5://127.0.0.1:10808"
+vim /etc/profile
+# export http\_proxy=http://127.0.0.1:10809
+# export https\_proxy=http://127.0.0.1:10809
 
 # --------------------------------------------------
 
@@ -143,6 +145,14 @@ EnableHiDPI=true
 
 # grub
 https://draculatheme.com/grub
+
+# ----------------------------------------------------
+
+# paru
+https://github.com/Morganamilo/paru
+
+# chrome
+google-chrome-stable --proxy-server="socks5://127.0.0.1:10808"
 
 # ----------------------------------------------------
 
@@ -181,30 +191,6 @@ vim ~/.bash_profile (copy from /etc/skel/.bash_profile) or ~/.zprofile
 vim /etc/systemd/system/getty@tty1.service.d/override.conf
 
 # ------------------------------------------------------
-
-# paru
-
-# chrome
-google-chrome-stable --proxy-server="socks5://127.0.0.1:10808"
-
-# dracula theme
-## grub
-https://draculatheme.com/grub
-
-## xresources
-https://draculatheme.com/xresources
-
-## alacritty
-https://draculatheme.com/alacritty
-
-## no do
-https://draculatheme.com/zsh-syntax-highlighting
-https://draculatheme.com/zsh
-https://draculatheme.com/vim
-https://draculatheme.com/rofi
-https://draculatheme.com/dunst
-
-# ---------------------------------------------------------
 
 # dwm
 yay -S picom feh
