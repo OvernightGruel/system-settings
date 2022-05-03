@@ -142,6 +142,11 @@ EnableHiDPI=true
 [Wayland]
 EnableHiDPI=true
 
+# xmobar
+1. remove trayer from xmonad.hs startuphook
+2. modify xmobar config file
+3. add sound button
+
 # grub
 https://draculatheme.com/grub
 
