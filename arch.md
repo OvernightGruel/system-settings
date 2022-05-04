@@ -148,7 +148,7 @@ EnableHiDPI=true
 3. add sound button
 
 # wallpaper
-1. modify xmonad.hs startuphook # xwallpaper --stretch ~/.cache/wall
+1. modify xmonad.hs startuphook # xwallpaper --zoom ~/.cache/wall
 2. cp path/to/wallpaple ~/.cache/wall
 
 # grub
